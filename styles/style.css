@@ -1,1 +1,49 @@
+body {
+    background-color: rgb(119, 119, 119);
+    color: rgb(255, 255, 255);
+}
 
+header {
+    text-align: center;
+}
+
+form {
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10pt;
+    background-color: rgb(245, 245, 245);
+    color: rgb(34, 37, 41);
+}
+
+label {
+    display: block;
+}
+
+small {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+#tipPercentage {
+    width: 49%;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom:0px;
+    width:100%;
+}
+
+
+@media (max-width: 556px) {
+
+    form {
+        width: 90%;
+    }
+
+}
