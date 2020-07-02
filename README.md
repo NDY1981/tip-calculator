@@ -1,1 +1,1 @@
-# restaurant_tip_calculator
+Restaurant tip calculator web app.
