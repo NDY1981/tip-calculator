@@ -9,9 +9,9 @@ header {
 
 form {
     width: 500px;
-    margin: auto;
     padding: 10px;
     border-radius: 10pt;
+    margin: auto;
     background-color: rgb(245, 245, 245);
     color: rgb(34, 37, 41);
 }
@@ -34,9 +34,11 @@ ul {
 
 footer {
     text-align: center;
-    position: fixed;
-    bottom:0px;
-    width:100%;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 
