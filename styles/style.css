@@ -21,14 +21,19 @@ form {
     margin: auto;
     background-color: rgb(245, 245, 245);
     color: rgb(34, 37, 41);
+    width: 500px;
 }
 
 label {
     display: block;
 }
 
+input {
+    display: block;
+}
+
 #tipPercentage {
-    width: 58%;
+    width: 95%;
 }
 
 small {
@@ -49,14 +54,10 @@ a {
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 556px) {
 
     form {
         width: 90vw;
-    }
-
-    #tipPercentage {
-        width: 50%;
     }
 
 }
