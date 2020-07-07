@@ -3,12 +3,21 @@ body {
     color: rgb(255, 255, 255);
 }
 
+#grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    align-items: center;
+    justify-items: center;
+}
+
 header {
     text-align: center;
 }
 
 form {
-    width: 500px;
     padding: 10px;
     border-radius: 10pt;
     margin: auto;
@@ -28,10 +37,6 @@ ul {
     list-style: none;
 }
 
-#tipPercentage {
-    width: 49%;
-}
-
 footer {
     text-align: center;
 }
@@ -42,7 +47,7 @@ a {
 }
 
 
-@media (max-width: 556px) {
+@media (max-width: 576px) {
 
     form {
         width: 90%;
