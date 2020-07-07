@@ -7,8 +7,6 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-row: 1;
-    grid-column: 1;
     align-items: center;
     justify-items: center;
 }
