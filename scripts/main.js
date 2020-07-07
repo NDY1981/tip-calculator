@@ -7,7 +7,7 @@ let totalWithTip = document.getElementById("totalWithTip");
 
 
 tipPercentage.oninput = function() {
-    tipPercentageOutput.textContent = tipPercentage.value;
+    tipPercentageOutput.textContent = tipPercentage.value + "%";
     tip.textContent = (checkTotal.value * (tipPercentage.value / 100)).toFixed(2);
     totalWithTip.textContent = (parseFloat(total.textContent) + parseFloat(tip.textContent)).toFixed(2);
 }
