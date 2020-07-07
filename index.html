@@ -8,28 +8,33 @@
         <title>Restaurant Tip Calculator</title>
     </head>
     <body>
-        <header>
-            <h1>Restaurant Tip Calculator</h1>
-        </header>
-        <main>
-            <form>
-                <label for="checkTotal">Check Total: $
-                    <input  id="checkTotal" type="number" value="0.00" min="0" step="0.01">
-                </label>
-                <label for="tipPercentage">Tip Percentage: 
-                    <input id="tipPercentage" type="range" value="0" min="0" max="60" step="1"><output id="tipPercentageOutput" for="tipPercentage">0</output>%
-                    <small>Recommended tip is 15-20%</small>
-                </label>
-                <ul>
-                    <li>Total: $<output for="checkTotal" id="total">0.00</output></li>
-                    <li>Tip: $<output for="checkTotal tipPercentage" id="tip">0.00</output></li>
-                    <li>Total With Tip: $<output for="checkTotal tipPercentage" id="totalWithTip">0.00</output></li>
-                </ul>                
-            </form>
-        </main>
-        <footer>
-            <p>Designed and Developed by <a href="http://nathanyoderdev.com" target="_blank">Nathan Yoder</a></p>
-        </footer>
+        <div id="grid">
+            <div>
+                <header>
+                    <h1>Restaurant Tip Calculator</h1>
+                </header>
+                <main>
+                    <form>
+                        <label for="checkTotal">Check Total: $
+                            <input  id="checkTotal" type="number" value="0.00" min="0" step="0.01">
+                        </label>
+                        <label for="tipPercentage">Tip Percentage: 
+                            <input id="tipPercentage" type="range" value="0" min="0" max="60" step="1">
+                            <output id="tipPercentageOutput" for="tipPercentage">0%</output>
+                            <small>Recommended tip is 15-20%</small>
+                        </label>
+                        <ul>
+                            <li>Total: $<output for="checkTotal" id="total">0.00</output></li>
+                            <li>Tip: $<output for="checkTotal tipPercentage" id="tip">0.00</output></li>
+                            <li>Total With Tip: $<output for="checkTotal tipPercentage" id="totalWithTip">0.00</output></li>
+                        </ul>                
+                    </form>
+                </main>
+                <footer>
+                    <p>Designed and Developed by <a href="http://nathanyoderdev.com" target="_blank">Nathan Yoder</a></p>
+                </footer>
+            </div>
+        </div>
         <script src="scripts/main.js"></script>   
     </body>
 </html>
