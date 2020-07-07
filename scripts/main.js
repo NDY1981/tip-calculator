@@ -8,14 +8,14 @@ let totalWithTip = document.getElementById("totalWithTip");
 
 
 checkTotal.oninput = function() {
-    checkTotalOutput.textContent = (parseFloat(checkTotal.value)).toFixed(2);
-    total.textContent = (parseFloat(checkTotal.value)).toFixed(2);
-    tip.textContent = (checkTotal.value * (tipPercentage.value / 100)).toFixed(2);
-    totalWithTip.textContent = (parseFloat(total.textContent) + parseFloat(tip.textContent)).toFixed(2);
+    checkTotalOutput.textContent = "$" + (parseFloat(checkTotal.value)).toFixed(2);
+    total.textContent = "$" + (parseFloat(checkTotal.value)).toFixed(2);
+    tip.textContent = "$" + (parseFloat(checkTotal.value * (tipPercentage.value / 100))).toFixed(2);
+    totalWithTip.textContent = "$" + (parseFloat(checkTotal.value) + (parseFloat(checkTotal.value * (tipPercentage.value / 100)))).toFixed(2);
 }
 
 tipPercentage.oninput = function() {
-    tipPercentageOutput.textContent = tipPercentage.value;
-    tip.textContent = (checkTotal.value * (tipPercentage.value / 100)).toFixed(2);
-    totalWithTip.textContent = (parseFloat(total.textContent) + parseFloat(tip.textContent)).toFixed(2);
+    tipPercentageOutput.textContent = tipPercentage.value + "%";
+    tip.textContent = "$" + (parseFloat(checkTotal.value * (tipPercentage.value / 100))).toFixed(2);
+    totalWithTip.textContent = "$" + (parseFloat(checkTotal.value) + (parseFloat(checkTotal.value * (tipPercentage.value / 100)))).toFixed(2);
 }
