@@ -27,6 +27,10 @@ label {
     display: block;
 }
 
+#tipPercentage {
+    width: 58%;
+}
+
 small {
     display: block;
 }
@@ -49,6 +53,10 @@ a {
 
     form {
         width: 90vw;
+    }
+
+    #tipPercentage {
+        width: 50%;
     }
 
 }
