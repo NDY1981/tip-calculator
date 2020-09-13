@@ -1,0 +1,16 @@
+{
+    "name": "Restaurant Tip Calculator",
+    "short_name": "RestaurantTipCalculator",
+    "description": "Restaurant tip calculator web app.",
+    "icons": [
+        {
+            "src": "icons/icon.png",
+            "sizes": "225x225",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/restaurant_tip_calculator/index.html",
+    "display": "fullscreen",
+    "theme_color": "#777777",
+    "background_color": "#777777"
+}
