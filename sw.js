@@ -1,4 +1,4 @@
-var cacheName = 'RestaurantTipCalculator';
+var cacheName = 'Restaurant Tip Calculator';
 
 var appShellFiles = [
     '/restaurant_tip_calculator/',
