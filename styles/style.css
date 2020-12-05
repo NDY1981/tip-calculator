@@ -2,7 +2,6 @@ body {
     background-color: rgb(119, 119, 119);
     color: rgb(255, 255, 255);
     margin: 0;
-    overflow: hidden;
 }
 
 #grid {
