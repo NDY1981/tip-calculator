@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(119, 119, 119);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+form {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: rgb(245, 245, 245);
+    color: rgb(34, 37, 41);
+    width: 500px;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+}
+
+#tipPercentage {
+    width: 95%;
+}
+
+small {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+@media (max-width: 550px) {
+
+    form {
+        width: 90vw;
+    }
+
+}
