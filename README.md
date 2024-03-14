@@ -1,1 +1,1 @@
-Restaurant tip calculator web app.
+Tip calculator web app.
