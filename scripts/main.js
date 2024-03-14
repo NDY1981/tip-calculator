@@ -1,45 +1,64 @@
-let checkTotal = document.getElementById("checkTotal");
-let checkTotalOutput = document.getElementById("checkTotalOutput");
-let tipPercentage = document.getElementById("tipPercentage");
-let tipPercentageOutput = document.getElementById("tipPercentageOutput");
-let total = document.getElementById("total");
-let tip = document.getElementById("tip");
-let totalWithTip = document.getElementById("totalWithTip");
+/* Scripting for the Tip Calculator: */
 
-checkTotalOutput.textContent = "$0.00";
-tipPercentageOutput.textContent = "0%";
-total.textContent = "$0.00";
-tip.textContent = "$0.00";
-totalWithTip.textContent = "$0.00";
 
-checkTotal.oninput = function() {
-    if (isNaN((parseFloat(checkTotal.value)).toFixed(2))) {
-        checkTotalOutput.textContent = "Please enter a number!!!";
-        total.textContent = "";
-        tip.textContent = "";
-        totalWithTip.textContent = "";
-    } else if (checkTotal.value < 0) {
-        checkTotalOutput.textContent = "Please enter a positive number!!!";
-        total.textContent = "";
-        tip.textContent = "";
-        totalWithTip.textContent = "";
-    } else {
-        checkTotalOutput.textContent = "$" + (parseFloat(checkTotal.value)).toFixed(2);
-        total.textContent = "$" + (parseFloat(checkTotal.value)).toFixed(2);
-        tip.textContent = "$" + (parseFloat(checkTotal.value * (tipPercentage.value / 100))).toFixed(2);
-        totalWithTip.textContent = "$" + (parseFloat(checkTotal.value) + (parseFloat(checkTotal.value * (tipPercentage.value / 100)))).toFixed(2);
-    }
+/* Grab element references: */
+const TipCalculator = document.querySelector("#TipCalculator");
+const CheckTotalInput = document.querySelector("#CheckTotalInput");
+const TipPercentageInput = document.querySelector("#TipPercentageInput");
+const CheckTotalOutput = document.querySelector("#CheckTotalOutput");
+const TipTotalOutput = document.querySelector("#TipTotalOutput");
+const TotalWithTipOutput = document.querySelector("#TotalWithTipOutput");
+const Calculate = document.querySelector("#Calculate");
+const Reset = document.querySelector("#Reset");
+
+
+/* Build custom functions: */
+
+function USDFormat(value) {
+	value = value.toLocaleString('en-US', {
+		style: 'currency',
+		currency: 'USD',
+	});
+	return value;
 }
-   
 
-tipPercentage.oninput = function() {
-    if (isNaN((parseFloat(checkTotal.value)).toFixed(2)) || checkTotal.value < 0) {
-        tipPercentageOutput.textContent = tipPercentage.value + "%";
-        tip.textContent = "";
-        totalWithTip.textContent = "";
-    } else {
-        tipPercentageOutput.textContent = tipPercentage.value + "%";
-        tip.textContent = "$" + (parseFloat(checkTotal.value * (tipPercentage.value / 100))).toFixed(2);
-        totalWithTip.textContent = "$" + (parseFloat(checkTotal.value) + (parseFloat(checkTotal.value * (tipPercentage.value / 100)))).toFixed(2);
-    }
+function CalculateAll() {
+	if (TipCalculator.reportValidity()) {
+		let TipPercentage = TipPercentageInput.value;
+		TipPercentage = Number(TipPercentage);
+		TipPercentageInput.value = TipPercentage.toFixed(0);
+		TipPercentage = TipPercentage / 100;
+		TipPercentage = TipPercentage.toFixed(2);
+		TipPercentage = Number(TipPercentage);
+
+		let CheckTotal = CheckTotalInput.value;
+		CheckTotal = Number(CheckTotal);
+		CheckTotalInput.value = CheckTotal.toFixed(2);
+
+		let Tip = TipPercentage * CheckTotal;
+		Tip = Tip.toFixed(2);
+		Tip = Number(Tip);
+
+		let TotalWithTip = CheckTotal + Tip;
+		TotalWithTip = TotalWithTip.toFixed(2);
+		TotalWithTip = Number(TotalWithTip);
+
+		CheckTotalOutput.textContent = `${USDFormat(CheckTotal)}`;
+		TipTotalOutput.textContent = `${USDFormat(Tip)}`;
+		TotalWithTipOutput.textContent = `${USDFormat(TotalWithTip)}`;
+	} else {
+		ResetAll();
+	}
 }
+
+function ResetAll() {
+	CheckTotalOutput.textContent = "";
+	TipTotalOutput.textContent = "";
+	TotalWithTipOutput.textContent = "";
+}
+
+
+/* Add the event listeners: */
+Calculate.addEventListener("click", CalculateAll);
+
+Reset.addEventListener("click", ResetAll);
