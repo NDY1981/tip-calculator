@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Nathan Yoder">
-        <meta name="description" content="Restaurant tip calculator web app.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/style.css">
-        <script src="scripts/main.js" defer></script>
-        <title>Restaurant Tip Calculator</title>
-    </head>
-    <body>
-        <header>
-            <h1>Restaurant Tip Calculator</h1>
-        </header>
-        <main>
-            <form>
-                <label for="checkTotal">Check Total:
-                    <output for="checkTotal" id="checkTotalOutput"></output>
-                    <input  id="checkTotal" type="number" value="0.00" min="0.00" step="0.01">
-                </label>
-                <label for="tipPercentage">Tip Percentage:
-                    <output id="tipPercentageOutput" for="tipPercentage"></output>
-                    <input id="tipPercentage" type="range" value="0" min="0" max="100" step="1">
-                    <small>Recommended tip is 15% - 20%</small>
-                </label>
-                <ul>
-                    <li>Total: <output for="checkTotal" id="total"></output></li>
-                    <li>Tip: <output for="checkTotal tipPercentage" id="tip"></output></li>
-                    <li>Total With Tip: <output for="checkTotal tipPercentage" id="totalWithTip"></output></li>
-                </ul>                
-            </form>
-        </main>
-        <footer>
-            <p>Designed and Developed by <a href="https://www.nathanyoderdev.com" target="_blank">Nathan Yoder</a></p>
-        </footer>  
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Nathan Yoder">
+    <meta name="description" content="Tip calculator web app.">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/main.js" defer></script>
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <main>
+      <form id="TipCalculator">  <!-- The Tip Calculator is entirely in this form element. -->
+        <h1>Tip Calculator</h1>
+        <div class="InputGroup">
+          <label for="CheckTotalInput">Check total:</label>
+          <input id="CheckTotalInput" type="number" min="0" step="0.01" value="0.00" required>
+        </div>
+        <div class="InputGroup">
+          <label for="TipPercentageInput">Tip Percentage:</label>
+          <input id="TipPercentageInput" type="number" min="0" step="1" value="0" required>
+        </div>
+        <ul>
+          <li><label for="CheckTotalOutput">Check total:</label><output id="CheckTotalOutput" for="CheckTotalInput"></output></li>
+          <li><label for="TipTotalOutput">Tip:</label><output id="TipTotalOutput" for="CheckTotalInput TipPercentageInput"></output></li>
+          <li><label for="TotalWithTipOutput">Total with tip:</label><output id="TotalWithTipOutput" for="CheckTotalInput TipPercentageInput"></output></li>
+        </ul>
+        <div id="ButtonGroup">
+          <input id="Calculate" type="button" value="Calulate">
+          <input id="Reset" type="reset">
+        </div>                
+      </form>
+    </main>
+    <footer>
+      <p>Designed and Developed by <a href="https://www.nathanyoderdev.com" target="_blank">Nathan Yoder</a></p>
+    </footer>  
+  </body>
 </html>
